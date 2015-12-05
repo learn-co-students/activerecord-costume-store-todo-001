@@ -1,5 +1,4 @@
 require_relative 'spec_helper'
-
 describe "CostumeStore" do
 
   it "has a name" do
@@ -49,11 +48,13 @@ describe "CostumeStore" do
   end
 
   it "has an opening time" do
-    start_time = get_opening_time
+   start_time = get_opening_time
+
     creative = CostumeStore.create(
-      name: "Creative Costume Co", 
+     name: "Creative Costume Co", 
       opening_time: start_time 
     )
+
     expect(CostumeStore.find_by(name: "Creative Costume Co").opening_time).to eq(start_time)
   end
 
@@ -66,4 +67,6 @@ describe "CostumeStore" do
     expect(CostumeStore.find_by(name: "New York Costumes").closing_time).to eq(end_time)
   end
 
-end
+
+
+  end
