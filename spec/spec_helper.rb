@@ -41,3 +41,4 @@ def get_description
     Featuring all new up-close and in-your- face frights for 2014!
   eos
 end
+
