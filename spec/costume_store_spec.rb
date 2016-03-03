@@ -49,21 +49,19 @@ describe "CostumeStore" do
   end
 
   it "has an opening time" do
-    start_time = get_opening_time
     creative = CostumeStore.create(
       name: "Creative Costume Co", 
-      opening_time: start_time 
+      opening_time: "9am"
     )
-    expect(CostumeStore.find_by(name: "Creative Costume Co").opening_time).to eq(start_time)
+    expect(CostumeStore.find_by(name: "Creative Costume Co").opening_time).to eq("9am")
   end
 
   it "has a closing time" do
-    end_time = get_closing_time
     ny_costumes = CostumeStore.create(
       name: "New York Costumes", 
-      closing_time: end_time 
+      closing_time: "10pm" 
     )
-    expect(CostumeStore.find_by(name: "New York Costumes").closing_time).to eq(end_time)
+    expect(CostumeStore.find_by(name: "New York Costumes").closing_time).to eq("10pm")
   end
 
 end
