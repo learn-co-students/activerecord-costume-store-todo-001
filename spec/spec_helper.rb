@@ -1,3 +1,4 @@
+# coding: utf-8
 ENV["ACTIVE_RECORD_ENV"] = "test"
 
 require_relative '../config/environment'
@@ -8,7 +9,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.start
     DatabaseCleaner.clean
-    system('rake db:migrate')
+    system("rake db:migrate")
+    DB.tables
   end
 
 end

@@ -14,7 +14,7 @@
 
 ![jack o lantern emoji](http://www.emoji-cheat-sheet.com/graphics/emojis/jack_o_lantern.png) ![dog ghost emoji](http://www.emoji-cheat-sheet.com/graphics/emojis/ghost.png) ![jack o lantern emoji](http://www.emoji-cheat-sheet.com/graphics/emojis/jack_o_lantern.png)
 
-For this morning's todo, you'll be creating the following tables: 'costumes','costume_stores', and 'haunted_houses'. You be creating the following classes: `Costume`, `CostumeStore`, and `HauntedHouse`.
+For this morning's todo, you'll be creating the following tables: 'costumes','costume_stores', and 'haunted_houses'. You'll be creating the following classes: `Costume`, `CostumeStore`, and `HauntedHouse`.
 
 The `costumes` table will have four columns:
   1. name
@@ -121,7 +121,7 @@ For instance, let's say you wanted to make a class called `Candy`. Candies shoul
 ```ruby
 class CreateCandies < ActiveRecord::Migration
   def change
-    create_table :products do |t|
+    create_table :candies do |t|
       t.string :name
       t.integer :calories
       t.timestamps
@@ -137,7 +137,7 @@ While the migration was plural, the model would be singular:
 `app/models/candy.rb`
 
 ```ruby
-class CostumeStore < ActiveRecord::Base
+class Candy < ActiveRecord::Base
 end
 ```
 
@@ -148,14 +148,14 @@ For instance, you could create three rows in the table easily:
 ```ruby
 Candy.create(:name => "Milky Way Midnight", :calories => 220)
 Candy.create(:name => "Snickers", :calories => 550)
-Candy.create(:name => "Reeeese's Peanut Batter Cups", :calories => 210)
+Candy.create(:name => "Reese's Peanut Butter Cups", :calories => 210)
 ```
 
-Retrieving information is just a painless:
+Retrieving information is just as painless:
 
 ```ruby
-reeses = Candy.find_by(:name => "Reeeese's Peanut Butter Cups")
-# => #<Candy id: 3, name: "Reeeese's Peanut Batter Cups", calories: 210>
+reeses = Candy.find_by(:name => "Reese's Peanut Butter Cups")
+# => #<Candy id: 3, name: "Reese's Peanut Butter Cups", calories: 210>
 Candy.first
 # => #<Candy id: 1, name: "Mikly Way Midnight", calories: 220>
 snickers = Candy.find(2)
@@ -223,7 +223,7 @@ You will only be altering code in six files, the three files in the `models` fol
 * Create the Costume class in `app/models/`.
 * Fill out the ActiveRecord migration for costumes such that it passes the specs.
 * Create the CostumeStore class in `app/models/`.
-* Fill out the ActiveRecord migration such that it `costume_stores` the specs.
+* Fill out the ActiveRecord migration for `costume_stores` such that it passes the specs.
 * Create the HauntedHouse class in `app/models/`.
 * Fill out the ActiveRecord migration for haunted_houses such that it passes the specs.
 * Remember to run `rake db:migrate` every time you create a migration. 
@@ -234,3 +234,7 @@ You will only be altering code in six files, the three files in the `models` fol
   * Just look at the code for the example migrations
 * [Creating Active Record Models](http://guides.rubyonrails.org/active_record_basics.html#creating-active-record-models) 
 * [Timestamps](http://api.rubyonrails.org/classes/ActiveRecord/Timestamp.html)
+
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/activerecord-costume-store-todo' title='ActiveRecord Costume Store'>ActiveRecord Costume Store</a> on Learn.co and start learning to code for free.</p>
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/activerecord-costume-store-todo'>Migrations and Active Record Lab</a> on Learn.co and start learning to code for free.</p>
