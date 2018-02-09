@@ -28,9 +28,9 @@ describe "CostumeStore" do
       name: "Ricky’s", 
       location: "375 Broadway",
       costume_inventory: 650,
-      num_of_employees: 17
+      employee_count: 17
     )
-    expect(CostumeStore.find_by(num_of_employees: 17)).to eq(rickys)
+    expect(CostumeStore.find_by(employee_count: 17)).to eq(rickys)
   end
 
   it "knows if it's still in business or permanently closed" do
