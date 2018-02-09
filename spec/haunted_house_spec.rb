@@ -56,8 +56,8 @@ describe "HauntedHouse" do
 
   it "has a long, long description" do
     description = get_description
-    HauntedHouse.create(name: "13th Floor", description: description)
-    expect(HauntedHouse.find_by(name: "13th Floor").description).to eq(description)
+    HauntedHouse.create(name: "13th Floor", long_long_description: description)
+    expect(HauntedHouse.find_by(name: "13th Floor").long_long_description).to eq(description)
   end
 
 end
